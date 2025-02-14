@@ -5,6 +5,7 @@ export default (sequelize: Sequelize,DataTypes:any) => {
     id!: number;
     name!: string;
     images!: string;
+    face_token!:string;
     imagepoint!:number[]
     createdAt!: Date;
     updatedAt!: Date;
@@ -38,6 +39,12 @@ export default (sequelize: Sequelize,DataTypes:any) => {
         // type: Sequelize.ARRAY(Sequelize.STRING),
         allowNull: true,
       },
+      face_token: {
+        type: DataTypes.STRING(255),
+
+        allowNull: true,
+      },
+
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,

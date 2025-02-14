@@ -15,7 +15,7 @@ module.exports = {
         allowNull: false,
       },
       images: {
-        type: Sequelize.STRING(20),
+        type: Sequelize.STRING(255),
         // type: Sequelize.ARRAY(Sequelize.STRING),
         allowNull: false,
         defaultValue: 0,
@@ -27,6 +27,14 @@ module.exports = {
         // type: Sequelize.ARRAY(Sequelize.BIGINT(20).UNSIGNED),
         allowNull: true,
       },
+      face_token: {
+        // type: Sequelize.STRING(20),
+        type: Sequelize.STRING(255),  // using JSON to store the array
+
+        // type: Sequelize.ARRAY(Sequelize.BIGINT(20).UNSIGNED),
+        allowNull: true,
+      },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

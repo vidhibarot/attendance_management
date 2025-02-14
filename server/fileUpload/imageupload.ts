@@ -1,5 +1,7 @@
 import multer from 'multer';
 import path from 'path';
+const cv = require("opencv.js");
+
 // Set up file storage with Multer (for image uploads)
 const storage = multer.diskStorage({
     destination: (req:any, file:any, cb:any) => {
@@ -11,3 +13,4 @@ const storage = multer.diskStorage({
   });
   
 export const Upload = multer({ storage });
+
