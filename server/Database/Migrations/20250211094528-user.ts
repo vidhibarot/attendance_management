@@ -20,13 +20,13 @@ module.exports = {
         allowNull: false,
         defaultValue: 0,
       },
-      imagepoint: {
-        // type: Sequelize.STRING(20),
-        type: Sequelize.JSON,  // using JSON to store the array
+      // imagepoint: {
+      //   // type: Sequelize.STRING(20),
+      //   type: Sequelize.JSON,  // using JSON to store the array
 
-        // type: Sequelize.ARRAY(Sequelize.BIGINT(20).UNSIGNED),
-        allowNull: true,
-      },
+      //   // type: Sequelize.ARRAY(Sequelize.BIGINT(20).UNSIGNED),
+      //   allowNull: true,
+      // },
       face_token: {
         // type: Sequelize.STRING(20),
         type: Sequelize.STRING(255),  // using JSON to store the array

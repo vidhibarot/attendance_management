@@ -11,10 +11,12 @@ export default (sequelize: Sequelize,DataTypes:any) => {
     updatedAt!: Date;
 
     static associate(models: any) {
-    //   User.hasMany(models.Attendance, {
-    //     foreignKey: 'master_id',
-    //     onDelete: 'cascade',
-    //   });
+     
+      User.hasMany(models.AttendanceMaster, {
+        foreignKey: 'user_id',
+        onDelete: 'cascade',
+      });
+
     }
   }
 
@@ -28,17 +30,17 @@ export default (sequelize: Sequelize,DataTypes:any) => {
       },
       name: {
         type: DataTypes.STRING(255),
-        allowNull: false,
+        allowNull: true,
       },
       images: {
         type: DataTypes.STRING(255),
-        allowNull: false,
-      },
-      imagepoint: {
-        type: DataTypes.JSON,  // using JSON to store the array
-        // type: Sequelize.ARRAY(Sequelize.STRING),
         allowNull: true,
       },
+      // imagepoint: {
+      //   type: DataTypes.JSON,  // using JSON to store the array
+      //   // type: Sequelize.ARRAY(Sequelize.STRING),
+      //   allowNull: true,
+      // },
       face_token: {
         type: DataTypes.STRING(255),
 

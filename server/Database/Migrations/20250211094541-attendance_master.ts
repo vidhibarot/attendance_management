@@ -13,9 +13,13 @@ module.exports = {
       user_id: {
         allowNull: false,
         type: Sequelize.BIGINT(20).UNSIGNED,
-        // references: { model: 'users', key: 'id', as: 'user_id' },
-        // onDelete: 'CASCADE'
+        references: {
+          model: 'user', 
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
       },
+
       date: {
         type: Sequelize.DATEONLY,
         allowNull: false,

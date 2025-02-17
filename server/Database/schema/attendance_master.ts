@@ -11,6 +11,11 @@ export default (sequelize: Sequelize,DataTypes:any) => {
     updatedAt!: Date;
 
     static associate(models: any) {
+      AttendanceMaster.belongsTo(models.User, {
+        foreignKey: 'user_id',
+        onDelete: 'cascade',
+      });
+
       AttendanceMaster.hasMany(models.Attendance, {
         foreignKey: 'master_id',
         onDelete: 'cascade',
@@ -29,7 +34,13 @@ export default (sequelize: Sequelize,DataTypes:any) => {
       user_id: {
         allowNull: false,
         type: DataTypes.BIGINT(20).UNSIGNED,
+        references: {
+          model: 'user', 
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
       },
+
       date: {
         type: DataTypes.DATEONLY,
         allowNull: false,

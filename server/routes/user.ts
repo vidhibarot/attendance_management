@@ -5,6 +5,9 @@ import { Upload } from "../fileUpload/imageupload";
 router.route("/add").post(Upload.array('images'),userController.addUser);
 
 router.route("/verifyattendance").post(Upload.array('images'),userController.verifyUser);
+
+router.route("/detectUser").post(Upload.array('images'),userController.detectUser);
+
 // router.route("/verifyattendance").post(userController.verifyUser);
 
 
